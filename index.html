@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date and Time</title>
+    <script>
+        function displayDateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            document.getElementById('date').textContent = date;
+            document.getElementById('time').textContent = time;
+        }
+
+        // Call displayDateTime on page load and then every second
+        window.onload = function() {
+            displayDateTime();
+            setInterval(displayDateTime, 1000);
+        };
+    </script>
+</head>
+<body>
+    <h1>Current Date and Time</h1>
+    <p>Date: <span id="date"></span></p>
+    <p>Time: <span id="time"></span></p>
+</body>
+</html>
